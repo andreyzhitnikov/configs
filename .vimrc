@@ -14,12 +14,12 @@ set nocompatible
 set backspace=2
 "
 "Tab-related settings
-"set expandtab
-"set shiftwidth=4
-"set smarttab
+set expandtab
+set shiftwidth=4
+set smarttab
 "
 " Enable highlighting of misspelled terms
-set spell
+"set spell
 "
 " I like syntax highlighting
 syntax on
@@ -28,7 +28,8 @@ syntax on
 set ruler
 "
 " Don't highlight all search terms, just find them
-set nohlsearch
+"set nohlsearch
+set hlsearch
 "
 " Status line improvements from Kim Schultz ("Hacking Vim")
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
@@ -81,7 +82,8 @@ map <F4> :source $HOME/.vimrc<CR>
 "
 " Use F5 to reformat paragraphs
 "map <F5> !}fmt <CR>
-"
+map <F5>  :let @/=""  <CR>
+
 " The following emacs-like bindings are
 " present because my fingers automatically
 " type them, not because I think that 
