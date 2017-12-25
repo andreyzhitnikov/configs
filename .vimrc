@@ -98,7 +98,12 @@ set ruler
 "
 " Don't highlight all search terms, just find them
 "set nohlsearch
+"higlight search
 set hlsearch
+"Make search case insensitive 
+set incsearch
+set ignorecase
+set smartcase
 "
 " Status line improvements from Kim Schultz ("Hacking Vim")
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
@@ -109,8 +114,14 @@ set laststatus=2
 "
 " Create backup files with a tilde extension, as 
 " some sites seem to change this
-set backupext=~
-"
+"set backupext=~
+"Disable backup and swap-they trigger two many events for file system
+"watchers
+set nobackup
+set nowritebackup
+set noswapfile
+
+
 " Force creation of backup files 
 set backup
 "

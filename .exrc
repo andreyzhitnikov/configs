@@ -2,7 +2,13 @@
 set list
 "
 " Show line numbers
-" set nu
+set nu
+"
+set tw=79
+set nowrap
+set fo-=t
+set colorcolumn=80
+highlight ColorColumn ctermbg=7
 " Hide Line Numbers
 " set nonu
 "
