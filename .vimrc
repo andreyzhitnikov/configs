@@ -123,7 +123,7 @@ set noswapfile
 
 
 " Force creation of backup files 
-set backup
+"set backup
 "
 " Use UTF-8 as the default text encoding
 set encoding=utf-8
