@@ -1,16 +1,14 @@
+" Jedi config 
+" Author Andrey Zhitnikov
+" based on
 " Sample .vimrc file by Martin Brochhaus
 " Presented at PyCon APAC 2012
 
 
-" ============================================
-" Note to myself:
-" DO NOT USE <C-z> FOR SAVING WHEN PRESENTING!
-" ============================================
-
 
 "let $PYTHONHOME='/usr/bin/python3.5'
 
-"Automatic reloading of .vimr<module> "Matplotlib requires six>=1.10c
+"Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
 
