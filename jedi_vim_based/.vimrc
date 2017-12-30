@@ -254,6 +254,8 @@ set wildignore+=*/coverage/*
 "let g:pymode_python = 'python3'
 map <Leader>b Opu.db #breakpoint
 
+set completeopt=longest,menuone,preview
+
 " Settings for jedi-vim
 "cd ~/.vim/bundle
 "git clone git://github.com/davidhalter/jedi-vim.git
@@ -268,7 +270,7 @@ let g:jedi#force_py_version = 3
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
+
 function! OmniPopup(action)
      if pumvisible()
          if a:action == 'j'
