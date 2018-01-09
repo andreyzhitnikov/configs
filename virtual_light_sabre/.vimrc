@@ -275,3 +275,7 @@ let g:pymode_python = 'python3'
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 "set nofoldenable
+
+"===latex-suite===="
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_DefaultTargetFormat = 'pdf'
