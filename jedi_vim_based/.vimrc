@@ -52,7 +52,7 @@ set bs=2     " make backspace behave like normal again
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
-let mapleader = ","
+"let mapleader = ","
 
 
 " Bind nohl
@@ -76,11 +76,11 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
-map <c-j> <c-w>j
+"map <c-j> <c-w>j
 
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+"map <c-k> <c-w>k
+"map <c-l> <c-w>l
+"map <c-h> <c-w>h
 
 
 " easier moving between tabs
@@ -303,3 +303,34 @@ let g:syntastic_python_pylint_exe = 'python3.4 -m pylint'
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 "set nofoldenable
 set foldmethod=indent
+
+
+
+
+" =======================
+" Hebrew support mapping 
+" =======================
+" Taken from: http://blog.elentok.com/2012/07/writing-hebrew-text-using-vim.html
+" Hit <F3> and this will also switch the language to Hebrew. No need to change the language in the
+" operating system. 
+imap <F3> <c-o>:call ToggleHebrew()<cr>
+map <F3> :call ToggleHebrew()<cr>
+
+func! ToggleHebrew()
+  if &rl
+    set norl
+    set keymap=
+  else
+    set rl
+    set keymap=hebrew
+  end
+endfunc
+
+" Copy a line and add lines above/below. 
+" Inspired by http://sphinx.pocoo.org/rest.html#sections
+nnoremap <leader>1 yyPVr=jyypVr=
+nnoremap <leader>2 yyPVr*jyypVr*
+nnoremap <leader>3 yypVr=
+nnoremap <leader>4 yypVr-
+nnoremap <leader>5 yypVr^
+nnoremap <leader>6 yypVr"
