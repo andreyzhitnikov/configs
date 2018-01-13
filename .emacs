@@ -48,5 +48,7 @@
 (setq reftex-plug-into-AUCTeX t)
 
 (setq TeX-PDF-mode t)
+
+(add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
                                                                                                                                                                                                
 ;; init.el ends here   
