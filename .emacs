@@ -75,10 +75,8 @@
  )
 (defun toggleHebrew ()
   (interactive)
-  (make-local-variable bidi-paragraph-direction)
   (setq bidi-paragraph-direction  'right-to-left ))
 
 (defun toggleEnglish ()
   (interactive)
-  (make-local-variable bidi-paragraph-direction)
-   (setq bidi-paragraph-direction  'left-to-right ))
+  (setq bidi-paragraph-direction  'left-to-right ))
