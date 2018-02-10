@@ -80,3 +80,14 @@
 (defun toggleEnglish ()
   (interactive)
   (setq bidi-paragraph-direction  'left-to-right ))
+
+;;try out packages
+(use-package try
+	     :ensure t)
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+
+
