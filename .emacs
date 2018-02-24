@@ -14,6 +14,9 @@
                                                                                                                                     
 (defvar myPackages                                                                                                                                                                                        
   '(better-defaults
+    neotree
+    helm
+    helm-bibtex
 ;;    elpy ;; add the elpy package
     material-theme))                                                                                                                                                                                       
 
@@ -88,6 +91,8 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+
 
 
 
