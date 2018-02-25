@@ -2,7 +2,7 @@
                                                                                                                                                                                                            
 ;; INSTALL PACKAGES                                                                                                                                                                                        
 ;; --------------------------------------                                                                                                                                                                  
-(require 'package)                                                                                                                                                                                         
+(require 'package)
                                                                                                                                                                                                            
 (add-to-list 'package-archives                                                                                                                                                                             
        '("melpa" . "http://melpa.org/packages/") t)                                                                                                                                                        
@@ -17,7 +17,11 @@
     neotree
     helm
     helm-bibtex
-;;    elpy ;; add the elpy package
+    elpy ;; add the elpy package
+    pdf-tools
+    which-key
+    try
+    use-package
     material-theme))                                                                                                                                                                                       
 
 
