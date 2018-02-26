@@ -3,6 +3,9 @@
 ;; INSTALL PACKAGES                                                                                                                                                                                        
 ;; --------------------------------------                                                                                                                                                                  
 (require 'package)
+(require 'notmuch)
+
+
                                                                                                                                                                                                            
 (add-to-list 'package-archives                                                                                                                                                                             
        '("melpa" . "http://melpa.org/packages/") t)                                                                                                                                                        
@@ -22,6 +25,8 @@
     which-key
     try
     use-package
+    auctex
+    projectile
     material-theme))                                                                                                                                                                                       
 
 
@@ -72,6 +77,7 @@
  '(column-number-mode t)
  '(display-battery-mode t)
  '(display-time-mode t)
+ '(safe-local-variable-values (quote ((TeX-master . t))))
  '(show-paren-mode t)
  '(size-indication-mode t))
 (custom-set-faces
@@ -96,7 +102,36 @@
   :ensure t
   :config (which-key-mode))
 
+(setq projectile-tags-command "etags -a TAGS \"%s\"")
 
+;; -----mail config----
+;;(add-to-list 'load-path "~/mu/mu4e")
+(autoload 'notmuch "notmuch" "notmuch mail" t)
+;; setup the mail address and use name
+(setq mail-user-agent 'sendmail-user-agent) ;;message-user-agent)
+(setq user-mail-address "andreyz@campus.technion.ac.il"
+      user-full-name "andreyz")
+;; smtp config
+(setq smtpmail-smtp-server  "smtp-mail.outlook.com" 
+      ;;message-send-mail-function 'message-smtpmail-send-it
+      send-mail-function    'smtpmail-send-it
+      smtpmail-stream-type  'starttls
+      smtpmail-smtp-service 587)
+(setq mail-self-blind t)
+;; use msmtp
+;; (setq message-send-mail-function 'message-send-mail-with-sendmail)
+;; (setq sendmail-program "/usr/bin/msmtp")
+
+
+;; report problems with the smtp server
+(setq smtpmail-debug-info t)
+;; add Cc and Bcc headers to the message buffer
+(setq message-default-mail-headers "Cc: \nBcc: \n")
+;; postponed message is put in the following draft directory
+(setq message-auto-save-directory "~/Maildir/draft")
+(setq message-kill-buffer-on-exit t)
+;; change the directory to store the sent mail
+(setq message-directory "~/Maildir/")
 
 
 
