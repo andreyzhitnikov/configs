@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -56,6 +57,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(auctex
                                       neotree
+                                      elpy
                                       pdf-tools)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -316,6 +318,17 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq reftex-plug-into-AUCTeX t)
   (setq TeX-PDF-mode t)
 
+  ;; predictive install location
+  ;;(add-to-list 'load-path "~/.emacs.d/predictive/")
+  ;; dictionary locations
+  ;;(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+  ;;(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+  ;;(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+  ;;(set-default 'predictive-auto-add-to-dict t)
+  ;;(setq predictive-auto-learn t
+       ;; predictive-add-to-dict-ask nil
+       ;; predictive-use-auto-learn-cache nil
+       ;; predictive-which-dict t)
 
   )
 
@@ -334,7 +347,8 @@ you should place your code here."
   ;;      TeX-source-correlate-start-server t)
 
   
-
+  ;; load predictive package
+  ;;(require 'predictive)
 
   (add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
   (defun toggleHebrew ()
@@ -344,9 +358,11 @@ you should place your code here."
   (defun toggleEnglish ()
     (interactive)
     (setq bidi-paragraph-direction 'left-to-right ))
+
   (setq projectile-tags-command "etags -a TAGS \"%s\"")
   (setq  display-battery-mode t)
   (pdf-tools-install)
+  ;;(elpy-enable)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
