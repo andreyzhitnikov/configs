@@ -38,7 +38,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;;helm
-     ;;auto-completion
+     auto-completion
      better-defaults
      ;;emacs-lisp
      ;;git
@@ -56,6 +56,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(auctex
+                                      company-auctex
                                       neotree
                                       elpy
                                       pdf-tools)
@@ -317,7 +318,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq TeX-source-correlate-method 'synctex)
   (setq reftex-plug-into-AUCTeX t)
   (setq TeX-PDF-mode t)
-
+  (setq ac-auto-start t)
+  (setq ac-auto-show-menu t)
+  (setq ac-delay 0)
   ;; predictive install location
   ;;(add-to-list 'load-path "~/.emacs.d/predictive/")
   ;; dictionary locations
@@ -351,6 +354,8 @@ you should place your code here."
   ;;(require 'predictive)
 
   (add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
+  
+  
   (defun toggleHebrew ()
     (interactive)
     (setq bidi-paragraph-direction  'right-to-left ))
@@ -362,6 +367,8 @@ you should place your code here."
   (setq projectile-tags-command "etags -a TAGS \"%s\"")
   (setq  display-battery-mode t)
   (pdf-tools-install)
+  (company-auctex-init)
+  
   ;;(elpy-enable)
   )
 
