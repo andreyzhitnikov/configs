@@ -3,7 +3,7 @@
 ;; INSTALL PACKAGES                                                                                                                                                                                        
 ;; --------------------------------------                                                                                                                                                                  
 (require 'package)
-(require 'notmuch)
+;;(require 'notmuch)
 
 
                                                                                                                                                                                                            
@@ -27,6 +27,7 @@
     use-package
     auctex
     projectile
+    popwin
     material-theme))                                                                                                                                                                                       
 
 
@@ -132,6 +133,20 @@
 (setq message-kill-buffer-on-exit t)
 ;; change the directory to store the sent mail
 (setq message-directory "~/Maildir/")
+
+;; predictive install location
+(add-to-list 'load-path "~/.emacs.d/predictive/")
+;; dictionary locations
+(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
+(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
+(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+(set-default 'predictive-auto-add-to-dict t)
+(setq predictive-auto-learn t
+      predictive-add-to-dict-ask nil
+      predictive-use-auto-learn-cache nil
+      predictive-which-dict t)
+(require 'predictive)
+
 
 
 

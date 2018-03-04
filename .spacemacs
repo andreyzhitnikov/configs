@@ -57,6 +57,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(auctex
+                                      company-auctex
                                       neotree
                                       elpy
                                       company-auctex
@@ -323,6 +324,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;;      '(("tex" . "/usr/bin/kpsewhich -format=.tex %f")
   ;;        ("bib" . "/usr/bin/kpsewhich -format=.bib %f")))
 
+  (setq ac-auto-start t)
+  (setq ac-auto-show-menu t)
+  (setq ac-delay 0)
   ;; predictive install location
   ;;(add-to-list 'load-path "~/.emacs.d/predictive/")
   ;; dictionary locations
@@ -356,6 +360,8 @@ you should place your code here."
   ;;(require 'predictive)
 
   (add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
+  
+  
   (defun toggleHebrew ()
     (interactive)
     (setq bidi-paragraph-direction  'right-to-left ))
