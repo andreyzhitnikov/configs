@@ -38,8 +38,9 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;;helm
-     ;;auto-completion
-     better-defaults
+     auto-completion
+     ;;better-defaults
+     ;;(c-c++ :variables c-c++-enable-clang-support t)
      ;;emacs-lisp
      ;;git
      ;;markdown
@@ -58,6 +59,7 @@ values."
    dotspacemacs-additional-packages '(auctex
                                       neotree
                                       elpy
+                                      company-auctex
                                       pdf-tools)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -317,6 +319,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq TeX-source-correlate-method 'synctex)
   (setq reftex-plug-into-AUCTeX t)
   (setq TeX-PDF-mode t)
+  ;;(setq reftex-external-file-finders
+  ;;      '(("tex" . "/usr/bin/kpsewhich -format=.tex %f")
+  ;;        ("bib" . "/usr/bin/kpsewhich -format=.bib %f")))
 
   ;; predictive install location
   ;;(add-to-list 'load-path "~/.emacs.d/predictive/")
@@ -346,7 +351,7 @@ you should place your code here."
   ;;      TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
   ;;      TeX-source-correlate-start-server t)
 
-  
+ 
   ;; load predictive package
   ;;(require 'predictive)
 
@@ -360,10 +365,8 @@ you should place your code here."
     (setq bidi-paragraph-direction 'left-to-right ))
 
   (setq projectile-tags-command "etags -a TAGS \"%s\"")
-  (setq  display-battery-mode t)
+  (global-company-mode t)
   (pdf-tools-install)
+  (company-auctex-init)
   ;;(elpy-enable)
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
