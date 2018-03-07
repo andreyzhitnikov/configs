@@ -358,7 +358,7 @@ you should place your code here."
  
   ;; load predictive package
   ;;(require 'predictive)
-
+  (global-set-key "\C-x\C-\\" 'goto-last-change)
   (add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
   
   
