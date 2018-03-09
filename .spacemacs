@@ -38,7 +38,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;;helm
-     auto-completion
+     auto-completion 
      ;;better-defaults
      ;;(c-c++ :variables c-c++-enable-clang-support t)
      ;;emacs-lisp
@@ -61,6 +61,8 @@ values."
                                       neotree
                                       elpy
                                       company-auctex
+                                      company-jedi
+                                      company-anaconda
                                       pdf-tools)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -327,6 +329,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq ac-auto-start t)
   (setq ac-auto-show-menu t)
   (setq ac-delay 0)
+  ;;(defun my/python-mode-hook ()
+  ;;  (add-to-list 'company-backends 'company-jedi))
+  ;;(add-hook 'python-mode-hook 'my/python-mode-hook)
+ 
   ;; predictive install location
   ;;(add-to-list 'load-path "~/.emacs.d/predictive/")
   ;; dictionary locations
@@ -355,13 +361,21 @@ you should place your code here."
   ;;      TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
   ;;      TeX-source-correlate-start-server t)
 
- 
+
   ;; load predictive package
   ;;(require 'predictive)
   (global-set-key "\C-x\C-\\" 'goto-last-change)
   (add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
-  
-  
+  ;; "company" because is defined in company.el
+  (eval-after-load "company"
+    '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
+  ;;(eval-after-load "company"
+  ;;  '(add-to-list 'company-backends '(company-jedi :with company-capf)))
+  ;;(with-eval-after-load 'company
+  ;;  (add-hook 'python-mode-hook
+  ;;            (lambda ()
+  ;;              (add-to-list 'company-backends 'company-jedi))))
+
   (defun toggleHebrew ()
     (interactive)
     (setq bidi-paragraph-direction  'right-to-left ))
