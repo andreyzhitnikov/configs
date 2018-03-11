@@ -391,4 +391,5 @@ you should place your code here."
   (pdf-tools-install)
   (company-auctex-init)
   ;;(elpy-enable)
+  (setq gud-pdb-command-name "python -m pdb ")
   )
