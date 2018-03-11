@@ -63,6 +63,7 @@ values."
                                       company-auctex
                                       company-jedi
                                       company-anaconda
+                                      ggtags
                                       pdf-tools)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
