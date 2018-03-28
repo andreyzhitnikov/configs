@@ -38,7 +38,8 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;;helm
-     auto-completion 
+     (auto-completion :variables
+                                 auto-completion-enable-snippets-in-popup t)
      ;;better-defaults
      ;;(c-c++ :variables c-c++-enable-clang-support t)
      ;;emacs-lisp
