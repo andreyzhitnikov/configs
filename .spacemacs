@@ -371,7 +371,7 @@ you should place your code here."
   (add-hook 'LaTeX-mode-hook (lambda() (local-set-key [C-tab] 'TeX-complete-symbol)))
   ;; "company" because is defined in company.el
   (eval-after-load "company"
-    '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
+    '(add-to-list 'company-backends '(company-anaconda :with company-capf :with company-yasnippet)))
   ;;(eval-after-load "company"
   ;;  '(add-to-list 'company-backends '(company-jedi :with company-capf)))
   ;;(with-eval-after-load 'company
