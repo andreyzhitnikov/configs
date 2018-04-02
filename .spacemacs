@@ -60,6 +60,7 @@ values."
    dotspacemacs-additional-packages '(auctex
                                       neotree
                                       elpy
+                                      yafolding
                                       company-auctex
                                       company-jedi
                                       company-anaconda
