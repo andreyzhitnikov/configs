@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     markdown
+     javascript
      python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -45,7 +47,7 @@ values."
      ;;emacs-lisp
      ;;git
      ;;markdown
-     ;;org
+     org
      ;;(shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -378,6 +380,8 @@ you should place your code here."
   ;;  (add-hook 'python-mode-hook
   ;;            (lambda ()
   ;;              (add-to-list 'company-backends 'company-jedi))))
+  (setq org-log-done 'time)
+  (setq org-log-done 'note)
 
   (defun toggleHebrew ()
     (interactive)
