@@ -397,4 +397,5 @@ you should place your code here."
   (company-auctex-init)
   ;;(elpy-enable)
   (setq gud-pdb-command-name "python -m pdb ")
+  (setq powerline-default-separator 'utf-8)
   )
