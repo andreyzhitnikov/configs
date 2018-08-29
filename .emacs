@@ -6,8 +6,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(package-initialize)
-                                                                                                                                                                                                                                                                                                                                                                                            
+;;(package-initialize)
+(unless package--initialized (package-initialize t))                                                                                                                                                                                                                                                                                                                                                                                            
                                                                                                                                                                                                         
 (when (not package-archive-contents)                                                                                                                                                                       
   (package-refresh-contents))                                                                                                                                                                            
@@ -116,5 +116,8 @@
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
+(add-to-list 'load-path "/home/blink/julia-emacs/")
+(require 'julia-mode)
 
+(setq-default neo-show-hidden-files t)
 
